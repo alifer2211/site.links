@@ -1,475 +1,553 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Links de Códigos — Anonymons</title>
-  <style>
-    :root{
-      --bg:#000000;
-      --panel:#07120a;        /* painel preto-esverdeado */
-      --accent:#00ff66;       /* verde neon */
-      --muted:#0b2a1a;        /* verde escuro */
-      --card:#0f1f17;
-      --text:#dfffe6;         /* texto claro */
-      --sub:#9fdcb3;
-      --glass: rgba(255,255,255,0.03);
-      --radius:10px;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Links de Códigos — Anonymons</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --panel: #07120a;
+            --accent: #00ff66;
+            --muted: #0b2a1a;
+            --card: #0f1f17;
+            --text: #dfffe6;
+            --sub: #9fdcb3;
+            --glass: rgba(255, 255, 255, 0.03);
+            --radius: 10px;
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        }
 
-    html,body{
-      height:100%;
-      margin:0;
-      background: linear-gradient(180deg,var(--bg),#050505 60%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #050505 60%);
+            color: var(--text);
+        }
 
-    .container{
-      max-width:980px;
-      margin:36px auto;
-      padding:24px;
-      background: linear-gradient(180deg,var(--panel), rgba(0,0,0,0.6));
-      border-radius:var(--radius);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
-      border: 1px solid rgba(0,255,102,0.06);
-    }
+        .container {
+            max-width: 980px;
+            margin: 36px auto;
+            padding: 24px;
+            background: linear-gradient(180deg, var(--panel), rgba(0, 0, 0, 0.6));
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(0, 255, 102, 0.06);
+        }
 
-    header{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      margin-bottom:18px;
-    }
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
 
-    .logo {
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(0,255,102,0.18), transparent 30%),
-                  linear-gradient(135deg,#07120a,#001a0f);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--accent);
-      font-weight:700;
-      font-size:20px;
-      border:2px solid rgba(0,255,102,0.12);
-      box-shadow: 0 4px 18px rgba(0,255,102,0.06);
-    }
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 255, 102, 0.18), transparent 30%), linear-gradient(135deg, #07120a, #001a0f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 20px;
+            border: 2px solid rgba(0, 255, 102, 0.12);
+            box-shadow: 0 4px 18px rgba(0, 255, 102, 0.06);
+        }
 
-    h1{
-      margin:0;
-      font-size:20px;
-      letter-spacing:0.6px;
-      color:var(--text);
-    }
+        h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 0.6px;
+            color: var(--text);
+        }
 
-    p.lead{
-      margin:4px 0 0 0;
-      color:var(--sub);
-      font-size:13px;
-    }
+        p.lead {
+            margin: 4px 0 0 0;
+            color: var(--sub);
+            font-size: 13px;
+        }
 
-    /* Abas */
-    .tabs{
-      display:flex;
-      gap:8px;
-      margin:18px 0;
-    }
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin: 18px 0;
+        }
 
-    .tab-btn{
-      flex:1;
-      background:var(--glass);
-      border:1px solid rgba(255,255,255,0.02);
-      color:var(--sub);
-      padding:10px 14px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:600;
-      transition: all .18s ease;
-      text-align:center;
-    }
+        .tab-btn {
+            flex: 1;
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            color: var(--sub);
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all .18s ease;
+            text-align: center;
+        }
 
-    .tab-btn.active{
-      background: linear-gradient(180deg, rgba(0,255,102,0.06), rgba(0,255,102,0.02));
-      color:var(--accent);
-      box-shadow: 0 6px 18px rgba(0,255,102,0.06);
-      transform: translateY(-2px);
-      border:1px solid rgba(0,255,102,0.18);
-    }
+        .tab-btn.active {
+            background: linear-gradient(180deg, rgba(0, 255, 102, 0.06), rgba(0, 255, 102, 0.02));
+            color: var(--accent);
+            box-shadow: 0 6px 18px rgba(0, 255, 102, 0.06);
+            transform: translateY(-2px);
+            border: 1px solid rgba(0, 255, 102, 0.18);
+        }
 
-    .content{
-      display:grid;
-      grid-template-columns: 1fr 320px;
-      gap:18px;
-      align-items:start;
-    }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 18px;
+            align-items: start;
+        }
 
-    .panel{
-      background:var(--card);
-      padding:16px;
-      border-radius:10px;
-      border:1px solid rgba(0,0,0,0.4);
-      min-height:260px;
-    }
+        .panel {
+            background: var(--card);
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            min-height: 260px;
+        }
 
-    .links-list{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    .link-item{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      padding:10px 12px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.02);
-    }
+        .link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
 
-    .link-left{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
+        .link-left {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
 
-    .favicon{
-      width:36px;
-      height:36px;
-      border-radius:6px;
-      background:rgba(0,0,0,0.3);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--accent);
-      font-weight:700;
-      font-size:14px;
-      border:1px solid rgba(0,255,102,0.06);
-    }
+        .favicon {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 14px;
+            border: 1px solid rgba(0, 255, 102, 0.06);
+        }
 
-    .link-title{
-      color:var(--text);
-      font-weight:700;
-      font-size:14px;
-    }
+        .link-title {
+            color: var(--text);
+            font-weight: 700;
+            font-size: 14px;
+        }
 
-    .link-url{
-      color:var(--sub);
-      font-size:12px;
-      max-width:420px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-    }
+        .link-url {
+            color: var(--sub);
+            font-size: 12px;
+            max-width: 420px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
 
-    .link-actions a, .link-actions button{
-      background:transparent;
-      color:var(--accent);
-      border:none;
-      cursor:pointer;
-      font-weight:700;
-      text-decoration:none;
-      padding:6px 8px;
-      border-radius:6px;
-    }
+        .link-actions a,
+        .link-actions button {
+            background: transparent;
+            color: var(--accent);
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 6px;
+        }
 
-    .sidebar h3{
-      margin:0 0 8px 0;
-      color:var(--accent);
-      font-size:15px;
-    }
+        .sidebar h3 {
+            margin: 0 0 8px 0;
+            color: var(--accent);
+            font-size: 15px;
+        }
 
-    .form-row{
-      display:flex;
-      gap:8px;
-      margin-bottom:8px;
-    }
+        .form-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
 
-    input[type="text"], select{
-      width:100%;
-      padding:10px;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.04);
-      background:transparent;
-      color:var(--text);
-      outline:none;
-    }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: transparent;
+            color: var(--text);
+            outline: none;
+        }
 
-    .btn{
-      display:inline-block;
-      background:linear-gradient(90deg,var(--accent), #00e65a);
-      color:#001a0f;
-      padding:10px 12px;
-      border-radius:8px;
-      border:none;
-      cursor:pointer;
-      font-weight:800;
-      box-shadow: 0 6px 18px rgba(0,255,102,0.06);
-    }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent), #00e65a);
+            color: #001a0f;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 800;
+            box-shadow: 0 6px 18px rgba(0, 255, 102, 0.06);
+        }
 
-    .small{
-      font-size:12px;
-      color:var(--sub);
-      margin-top:8px;
-    }
+        .tab-small {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            color: var(--sub);
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
-    footer{
-      margin-top:18px;
-      color:var(--sub);
-      font-size:13px;
-      text-align:center;
-    }
+        .small {
+            font-size: 12px;
+            color: var(--sub);
+            margin-top: 8px;
+        }
 
-    /* Responsivo */
-    @media (max-width:880px){
-      .content{ grid-template-columns: 1fr; }
-      .tabs{ flex-direction:column; }
-    }
-  </style>
+        footer {
+            margin-top: 18px;
+            color: var(--sub);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width:880px) {
+            .content {
+                grid-template-columns: 1fr
+            }
+
+            .tabs {
+                flex-direction: column
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container" role="main">
-    <header>
-      <div class="logo" aria-hidden="true"><img id="preview" src="anonymons.png" alt="Preview" style=" width: 90px; height: 90px; object-fit:cover; border-radius:8px; margin-top:8px;" />
-      </div>
-      <div>
-        <h1>Links de Códigos — Anonymons</h1>
-        <p class="lead">Organize seus snippets e repositórios por linguagem. Tema preto e verde.</p>
+    <div class="container" role="main">
+        <header>
+            <div class="logo" aria-hidden="true">A</div>
+            <div>
+                <h1>Links de Códigos — Anonymons</h1>
+                <p class="lead">Organize seus snippets por linguagem. Tema preto e verde.</p>
+            </div>
+        </header>
 
-      </div>
-    </header>
+        <nav class="tabs" role="tablist" aria-label="Abas de linguagens">
+            <button class="tab-btn active" data-tab="html" role="tab" aria-selected="true">HTML</button>
+            <button class="tab-btn" data-tab="js" role="tab" aria-selected="false">JavaScript</button>
+            <button class="tab-btn" data-tab="py" role="tab" aria-selected="false">Python</button>
+        </nav>
 
-    <nav class="tabs" role="tablist" aria-label="Abas de linguagens">
-      <button class="tab-btn active" data-tab="html" role="tab" aria-selected="true">HTML</button>
-      <button class="tab-btn" data-tab="js" role="tab" aria-selected="false">JavaScript</button>
-      <button class="tab-btn" data-tab="py" role="tab" aria-selected="false">Python</button>
-    </nav>
+        <section class="content">
+            <div class="panel" id="panel-html" data-panel="html" role="tabpanel">
+                <h2 style="color:var(--accent); margin-top:0;">HTML</h2>
+                <div class="links-list" id="list-html" aria-live="polite"></div>
+                <p class="small">Adicione links úteis de exemplos, templates e referências.</p>
+            </div>
 
-    <section class="content">
-      <!-- Área principal de links -->
-      <div class="panel" id="panel-html" data-panel="html" role="tabpanel">
-        <h2 style="color:var(--accent); margin-top:0;">HTML</h2>
-        <div class="links-list" id="list-html" aria-live="polite"></div>
-        <p class="small">Adicione links úteis de exemplos, templates e referências.</p>
-      </div>
+            <div class="panel" id="panel-js" data-panel="js" role="tabpanel" hidden>
+                <h2 style="color:var(--accent); margin-top:0;">JavaScript</h2>
+                <div class="links-list" id="list-js" aria-live="polite"></div>
+                <p class="small">Snippets, bibliotecas e demos em JS.</p>
+            </div>
 
-      <div class="panel" id="panel-js" data-panel="js" role="tabpanel" hidden>
-        <h2 style="color:var(--accent); margin-top:0;">JavaScript</h2>
-        <div class="links-list" id="list-js" aria-live="polite"></div>
-        <p class="small">Snippets, bibliotecas e demos em JS.</p>
-      </div>
+            <div class="panel" id="panel-py" data-panel="py" role="tabpanel" hidden>
+                <h2 style="color:var(--accent); margin-top:0;">Python</h2>
+                <div class="links-list" id="list-py" aria-live="polite"></div>
+                <p class="small">Scripts, exemplos e utilitários em Python.</p>
+            </div>
 
-      <div class="panel" id="panel-py" data-panel="py" role="tabpanel" hidden>
-        <h2 style="color:var(--accent); margin-top:0;">Python</h2>
-        <div class="links-list" id="list-py" aria-live="polite"></div>
-        <p class="small">Scripts, exemplos e utilitários em Python.</p>
-      </div>
+            <aside class="panel sidebar" aria-label="Adicionar link">
+                <h3>Adicionar link</h3>
 
-      <!-- Barra lateral para adicionar links -->
-      <aside class="panel sidebar" aria-label="Adicionar link">
-        <h3>Adicionar link</h3>
+                <div class="form-row">
+                    <input id="input-title" type="text" placeholder="Título (ex: Exemplo 2048)" />
+                </div>
 
-        <div class="form-row">
-          <input id="input-title" type="text" placeholder="Título (ex: Exemplo 2048)" />
-        </div>
+                <div class="form-row">
+                    <input id="input-url" type="text" placeholder="URL (ex: https://github.com/usuario/projeto)" />
+                </div>
 
-        <div class="form-row">
-          <input id="input-url" type="text" placeholder="URL (ex: https://github.com/usuario/projeto)" />
-        </div>
+                <div class="form-row">
+                    <select id="input-lang" aria-label="Linguagem">
+                        <option value="html">HTML</option>
+                        <option value="js">JavaScript</option>
+                        <option value="py">Python</option>
+                    </select>
+                </div>
 
-        <div class="form-row">
-          <select id="input-lang" aria-label="Linguagem">
-            <option value="html">HTML</option>
-            <option value="js">JavaScript</option>
-            <option value="py">Python</option>
-          </select>
-        </div>
+                <div class="form-row">
+                    <button id="btn-add" class="btn">Adicionar</button>
+                    <button id="btn-clear" class="tab-btn" style="width:120px;">Limpar</button>
+                </div>
 
-        <div class="form-row">
-          <button id="btn-add" class="btn">Adicionar</button>
-          <button id="btn-clear" class="tab-btn" style="width:120px;">Limpar</button>
-        </div>
+                <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:10px 0;">
 
-        <p class="small">Os links são salvos no seu navegador (localStorage) e permanecem entre visitas.</p>
-      </aside>
-    </section>
+                <h3 style="margin-top:6px;">Compartilhar / Backup</h3>
+                <div style="display:flex;gap:8px;margin-bottom:8px;">
+                    <button id="btn-export" class="tab-small">Exportar JSON</button>
+                    <label class="tab-small" style="cursor:pointer;">
+                        Importar JSON
+                        <input id="file-import" type="file" accept="application/json" style="display:none">
+                    </label>
+                </div>
 
-    <footer>
-      <small>Feito com tema Anonymons • Preto e verde • Salvo localmente</small>
-    </footer>
-  </div>
+                <div style="display:flex;gap:8px;">
+                    <button id="btn-reset-default" class="tab-small">Restaurar links padrão</button>
+                    <button id="btn-clear-all" class="tab-small">Limpar tudo</button>
+                </div>
 
-  <script>
-    // Estrutura de armazenamento: { html: [{title,url}], js: [...], py: [...] }
-    const STORAGE_KEY = "anonymons_links_v1";
+                <p class="small">Os links são salvos localmente no navegador. Use Exportar/Importar para compartilhar a
+                    lista com outras pessoas.</p>
+            </aside>
+        </section>
 
-    // Elementos
-    const tabs = document.querySelectorAll(".tab-btn");
-    const panels = {
-      html: document.getElementById("panel-html"),
-      js: document.getElementById("panel-js"),
-      py: document.getElementById("panel-py")
-    };
-    const lists = {
-      html: document.getElementById("list-html"),
-      js: document.getElementById("list-js"),
-      py: document.getElementById("list-py")
-    };
+        <footer>
+            <small>Feito com tema Anonymons • Preto e verde • Salvo localmente e exportável</small>
+        </footer>
+    </div>
 
-    const inputTitle = document.getElementById("input-title");
-    const inputUrl = document.getElementById("input-url");
-    const inputLang = document.getElementById("input-lang");
-    const btnAdd = document.getElementById("btn-add");
-    const btnClear = document.getElementById("btn-clear");
+    <script>
+        // Chave do localStorage
+        const STORAGE_KEY = "anonymons_links_v2";
 
-    // Inicializa dados
-    function loadData(){
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if(!raw) {
-        const base = { html: [], js: [], py: [] };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(base));
-        return base;
-      }
-      try {
-        return JSON.parse(raw);
-      } catch(e){
-        const base = { html: [], js: [], py: [] };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(base));
-        return base;
-      }
-    }
-
-    let data = loadData();
-
-    // Renderiza lista de uma linguagem
-    function renderList(lang){
-      const container = lists[lang];
-      container.innerHTML = "";
-      const items = data[lang] || [];
-      if(items.length === 0){
-        const empty = document.createElement("div");
-        empty.style.color = "var(--sub)";
-        empty.style.padding = "12px";
-        empty.textContent = "Nenhum link ainda. Adicione um usando o formulário.";
-        container.appendChild(empty);
-        return;
-      }
-      items.forEach((it, idx) => {
-        const item = document.createElement("div");
-        item.className = "link-item";
-
-        const left = document.createElement("div");
-        left.className = "link-left";
-
-        const fav = document.createElement("div");
-        fav.className = "favicon";
-        fav.textContent = (it.title || "L").slice(0,2).toUpperCase();
-
-        const meta = document.createElement("div");
-        const title = document.createElement("div");
-        title.className = "link-title";
-        title.textContent = it.title || it.url;
-        const url = document.createElement("div");
-        url.className = "link-url";
-        url.textContent = it.url;
-
-        meta.appendChild(title);
-        meta.appendChild(url);
-        left.appendChild(fav);
-        left.appendChild(meta);
-
-        const actions = document.createElement("div");
-        actions.className = "link-actions";
-
-        const open = document.createElement("a");
-        open.href = it.url;
-        open.target = "_blank";
-        open.rel = "noopener noreferrer";
-        open.textContent = "Abrir";
-
-        const del = document.createElement("button");
-        del.textContent = "Remover";
-        del.onclick = () => {
-          if(!confirm("Remover este link?")) return;
-          data[lang].splice(idx,1);
-          saveData();
-          renderAll();
+        // Links padrão (quem abrir o site pela primeira vez verá estes)
+        const DEFAULT_DATA = {
+            html: [
+                { title: "teste", url: "https://alifer2211.github.io/teste.html/teste.html" }
+            ],
+            js: [
+                { title: "teste", url: "https://alifer2211.github.io/teste.js/teste.js" },
+                { title: "teste2", url: "https://alifer2211.github.io/teste2.js/teste2.js" },
+                { title: "teste3", url: "https://alifer2211.github.io/teste3.js/teste3.js" },
+                { title: "carro", url: "https://alifer2211.github.io/carro.js/carro.js" },
+                { title: "notas", url: "https://alifer2211.github.io/notas.js/notas.js" }
+            ],
+            py: [
+                { title: "algo", url: "https://alifer2211.github.io/algo.py/algo.pyt" },
+                { title: "jogo", url: "https://alifer2211.github.io/jogo.py/jogo.py" },
+                { title: "teste", url: "https://alifer2211.github.io/teste.py/teste.py" }
+            ]
         };
 
-        actions.appendChild(open);
-        actions.appendChild(del);
+        // Elementos
+        const tabs = document.querySelectorAll(".tab-btn");
+        const panels = { html: document.getElementById("panel-html"), js: document.getElementById("panel-js"), py: document.getElementById("panel-py") };
+        const lists = { html: document.getElementById("list-html"), js: document.getElementById("list-js"), py: document.getElementById("list-py") };
+        const inputTitle = document.getElementById("input-title");
+        const inputUrl = document.getElementById("input-url");
+        const inputLang = document.getElementById("input-lang");
+        const btnAdd = document.getElementById("btn-add");
+        const btnClear = document.getElementById("btn-clear");
+        const btnExport = document.getElementById("btn-export");
+        const fileImport = document.getElementById("file-import");
+        const btnResetDefault = document.getElementById("btn-reset-default");
+        const btnClearAll = document.getElementById("btn-clear-all");
 
-        item.appendChild(left);
-        item.appendChild(actions);
-        container.appendChild(item);
-      });
-    }
+        // Carrega dados: se localStorage vazio, usa DEFAULT_DATA
+        function loadData() {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_DATA));
+                return JSON.parse(JSON.stringify(DEFAULT_DATA)); // clone
+            }
+            try {
+                return JSON.parse(raw);
+            } catch (e) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_DATA));
+                return JSON.parse(JSON.stringify(DEFAULT_DATA));
+            }
+        }
 
-    function renderAll(){
-      renderList("html");
-      renderList("js");
-      renderList("py");
-    }
+        let data = loadData();
 
-    function saveData(){
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    }
+        // Salva no localStorage
+        function saveData() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
 
-    // Abas
-    tabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tabs.forEach(b => {
-          b.classList.remove("active");
-          b.setAttribute("aria-selected","false");
+        // Renderiza lista
+        function renderList(lang) {
+            const container = lists[lang];
+            container.innerHTML = "";
+            const items = data[lang] || [];
+            if (items.length === 0) {
+                const empty = document.createElement("div");
+                empty.style.color = "var(--sub)";
+                empty.style.padding = "12px";
+                empty.textContent = "Nenhum link ainda. Adicione um usando o formulário.";
+                container.appendChild(empty);
+                return;
+            }
+            items.forEach((it, idx) => {
+                const item = document.createElement("div");
+                item.className = "link-item";
+
+                const left = document.createElement("div");
+                left.className = "link-left";
+
+                const fav = document.createElement("div");
+                fav.className = "favicon";
+                fav.textContent = (it.title || "L").slice(0, 2).toUpperCase();
+
+                const meta = document.createElement("div");
+                const title = document.createElement("div");
+                title.className = "link-title";
+                title.textContent = it.title || it.url;
+                const url = document.createElement("div");
+                url.className = "link-url";
+                url.textContent = it.url;
+
+                meta.appendChild(title);
+                meta.appendChild(url);
+                left.appendChild(fav);
+                left.appendChild(meta);
+
+                const actions = document.createElement("div");
+                actions.className = "link-actions";
+
+                const open = document.createElement("a");
+                open.href = it.url;
+                open.target = "_blank";
+                open.rel = "noopener noreferrer";
+                open.textContent = "Abrir";
+
+                const del = document.createElement("button");
+                del.textContent = "Remover";
+                del.onclick = () => {
+                    if (!confirm("Remover este link?")) return;
+                    data[lang].splice(idx, 1);
+                    saveData();
+                    renderAll();
+                };
+
+                actions.appendChild(open);
+                actions.appendChild(del);
+
+                item.appendChild(left);
+                item.appendChild(actions);
+                container.appendChild(item);
+            });
+        }
+
+        function renderAll() {
+            renderList("html");
+            renderList("js");
+            renderList("py");
+        }
+
+        // Abas
+        tabs.forEach(btn => {
+            btn.addEventListener("click", () => {
+                tabs.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+                btn.classList.add("active");
+                btn.setAttribute("aria-selected", "true");
+                const tab = btn.dataset.tab;
+                Object.keys(panels).forEach(k => panels[k].hidden = (k !== tab));
+            });
         });
-        btn.classList.add("active");
-        btn.setAttribute("aria-selected","true");
-        const tab = btn.dataset.tab;
-        // mostra painel correspondente
-        Object.keys(panels).forEach(k => {
-          if(k === tab){
-            panels[k].hidden = false;
-          } else {
-            panels[k].hidden = true;
-          }
+
+        // Adicionar link
+        btnAdd.addEventListener("click", () => {
+            const title = inputTitle.value.trim();
+            const url = inputUrl.value.trim();
+            const lang = inputLang.value;
+            if (!url) {
+                alert("Informe a URL do link.");
+                return;
+            }
+            const normalized = url.startsWith("http://") || url.startsWith("https://") ? url : "https://" + url;
+            data[lang].push({ title: title || normalized, url: normalized });
+            saveData();
+            inputTitle.value = "";
+            inputUrl.value = "";
+            renderAll();
+            document.querySelector(`.tab-btn[data-tab="${lang}"]`).click();
         });
-      });
-    });
 
-    // Adicionar link
-    btnAdd.addEventListener("click", () => {
-      const title = inputTitle.value.trim();
-      const url = inputUrl.value.trim();
-      const lang = inputLang.value;
-      if(!url){
-        alert("Informe a URL do link.");
-        return;
-      }
-      // validação simples de URL
-      const normalized = url.startsWith("http://") || url.startsWith("https://") ? url : "https://" + url;
-      data[lang].push({ title: title || normalized, url: normalized });
-      saveData();
-      inputTitle.value = "";
-      inputUrl.value = "";
-      renderAll();
-      // ativa aba correspondente
-      document.querySelector(`.tab-btn[data-tab="${lang}"]`).click();
-    });
+        btnClear.addEventListener("click", () => { inputTitle.value = ""; inputUrl.value = ""; });
 
-    // Limpar formulário
-    btnClear.addEventListener("click", () => {
-      inputTitle.value = "";
-      inputUrl.value = "";
-    });
+        // Exportar JSON
+        btnExport.addEventListener("click", () => {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "links-anonymons.json";
+            a.click();
+            URL.revokeObjectURL(url);
+        });
 
-    // Inicializa
-    renderAll();
-  </script>
+        // Importar JSON
+        fileImport.addEventListener("change", (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                try {
+                    const parsed = JSON.parse(reader.result);
+                    // valida estrutura mínima
+                    if (parsed.html && parsed.js && parsed.py) {
+                        data = parsed;
+                        saveData();
+                        renderAll();
+                        alert("Importação concluída.");
+                    } else {
+                        alert("Arquivo inválido. Deve conter chaves html, js e py.");
+                    }
+                } catch (err) {
+                    alert("Erro ao ler o arquivo JSON.");
+                }
+            };
+            reader.readAsText(file);
+            // limpa input para permitir reimportar mesmo o mesmo arquivo depois
+            fileImport.value = "";
+        });
+
+        // Restaurar padrão (DEFAULT_DATA)
+        btnResetDefault.addEventListener("click", () => {
+            if (!confirm("Restaurar os links padrão? Isso substituirá sua lista atual.")) return;
+            data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+            saveData();
+            renderAll();
+        });
+
+        // Limpar tudo
+        btnClearAll.addEventListener("click", () => {
+            if (!confirm("Remover todos os links? Esta ação não pode ser desfeita.")) return;
+            data = { html: [], js: [], py: [] };
+            saveData();
+            renderAll();
+        });
+
+        // Inicializa
+        renderAll();
+    </script>
 </body>
+
 </html>
